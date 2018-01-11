@@ -19,9 +19,15 @@ Maxim can be either started with adb command line.
 
 ### 3.1 Args
 
---uiautomatordfs    monkey use DFS algorithm .  About 5 action per second.
+[dfs mode]   --uiautomatordfs    monkey use DFS algorithm .  About 5 action per second.
 
---uiautomator         monkey use AccessibilityService resolve tree node and random choose.  About 10-15 action per second.
+[uiautomator mode]   --uiautomator   monkey use AccessibilityService resolve tree node and random choose.  About 10-15 action per second.
+
+[mix mode]  --uiautomatormix   monkey use random and uiautomator mix test.  About 10-20 action per second.
+
+--pct-uiautomatormix   uiautomator action ratio in mix mode
+
+--running-minutes  n  monkey total run time
 
 other args is same to Android Monkey
 
