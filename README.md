@@ -10,6 +10,7 @@
 
 - adb push framework.jar /sdcard
 - adb push monkey.jar /sdcard
+- adb push ape.strings /sdcard
 
 ## 3. Usage 
 
