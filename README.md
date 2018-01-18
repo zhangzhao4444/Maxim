@@ -10,7 +10,8 @@
 
 - adb push framework.jar /sdcard
 - adb push monkey.jar /sdcard
-- adb push ape.strings /sdcard
+[- adb push ape.strings /sdcard]
+[- adb push awl.strings /sdcard]
 
 ## 3. Usage 
 
@@ -27,6 +28,9 @@ Maxim can be either started with adb command line.
 --pct-uiautomatormix   uiautomator action ratio in mix mode
 
 --running-minutes  n  monkey total run time
+
+--act-whitelist-file /sdcard/awl.strings 
+--act-blacklist-file 
 
 other args is same to Android Monkey
 
