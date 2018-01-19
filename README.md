@@ -4,7 +4,8 @@
 
 ## 1. Requirements
 
-- Android 6.0
+- Android 5£¬6£¬7£¬8
+  - Android5 not support dfs
 
 ## 2. Setup
 
