@@ -2,6 +2,8 @@
 
 > A Kotlin implementation of Monkey TEST(Non-Stub) for Android that runs on Simulator/Android devices. 
 
+https://testerhome.com/topics/11719
+
 ## 1. Requirements
 
 - Android 5£¬6£¬7£¬8
