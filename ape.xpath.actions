@@ -1,0 +1,17 @@
+[
+{
+    "prob": 0.3,
+        "actions": [{
+            "activity":"com.xxx.",
+            "xpath": "//*[@class='android.widget.EditText']",
+            "action": "CLICK",
+            "text": "666666",
+            "throttle": 3000
+        },
+        {
+            "xpath": "//*[@content-desc='登录' and @class='android.view.View' and @clickable='true']",
+            "action": "CLICK",
+            "throttle": 10000
+        }]
+}
+]
