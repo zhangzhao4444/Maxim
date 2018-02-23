@@ -35,6 +35,8 @@ Maxim can be either started with adb command line.
 --act-whitelist-file /sdcard/awl.strings 
 --act-blacklist-file 
 
+max.xpath.actions  this file is special event configure 
+
 other args is same to Android Monkey
 
 
