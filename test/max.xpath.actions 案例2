@@ -1,0 +1,35 @@
+[
+{
+    "prob": 1,
+    "activity":"tv.panda.account.activity.WebLoginActivity",
+    "actions": [
+        {
+            "xpath": "//*[@content-desc='忘记密码' and @class='android.view.View']",
+            "index": 0,
+            "action": "CLICK",
+            "throttle": 100
+        }]
+},
+{
+     "prob": 1,
+     "actions": [
+     {
+             "xpath": "//*[@content-desc='下一步' and @class='android.view.View']",
+             "index": 0,
+             "action": "SWIPE",
+             "args": "10,1000,800,1000,100",
+             "throttle": 3000
+         }]
+ },
+{
+     "prob": 1,
+     "actions": [
+     {
+             "xpath": "//*[@content-desc='下一步' and @class='android.view.View']",
+             "index": 0,
+             "action": "TOUCH",
+             "args": "500,1000",
+             "throttle": 1000
+         }]
+}
+]

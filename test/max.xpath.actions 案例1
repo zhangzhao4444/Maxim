@@ -1,0 +1,27 @@
+[
+{
+    "prob": 1,
+    "activity":"tv.panda.account.activity.WebLoginActivity",
+    "actions": [
+        {
+            "xpath": "//*[@class='android.widget.EditText']",
+            "action": "INPUTTEXT",
+            "text": "13810751000",
+            "index": 0,
+            "throttle": 300
+        },
+        {
+            "xpath": "//*[@class='android.widget.EditText']",
+            "action": "INPUTTEXT",
+            "text": "123400",
+            "index": 1,
+            "throttle": 300
+        },
+        {
+            "xpath": "//*[@content-desc='登录' and @class='android.view.View']",
+            "index": 0,
+            "action": "CLICK",
+            "throttle": 1000
+        }]
+}
+]
