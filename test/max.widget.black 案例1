@@ -1,0 +1,10 @@
+[
+{
+    "activity":"tv.panda.account.activity.WebLoginActivity",
+    "xpath": "//*[@resource-id='com.panda.videoliveplatform:id/toolbar_title' and @class='android.widget.TextView']"
+},
+{
+    "activity":"tv.panda.account.activity.WebLoginActivity",
+    "bounds": "[0,200][1080,1920]"
+}
+]

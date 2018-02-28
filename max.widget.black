@@ -1,0 +1,16 @@
+[
+{
+    "activity":"com.panda.videoliveplatform.activity.MainFragmentActivity",
+    "xpath": "//*[@class='android.widget.TextView' and @text='我的校园' and @resource-id='com.panda.videoliveplatform:id/tv_title']"
+},
+{
+    "activity":"com.panda.videoliveplatform.activity.MainFragmentActivity",
+    "xpath": "//*[@class='android.widget.TextView' and @text='车队' and @resource-id='com.panda.videoliveplatform:id/tv_title']",
+    "index": 0,
+    "bounds": "[0,633][900,789]"
+},
+{
+    "activity":"com.panda.videoliveplatform.activity.MainFragmentActivity",
+    "bounds": "[0,1107][900,1263]"
+}
+]
