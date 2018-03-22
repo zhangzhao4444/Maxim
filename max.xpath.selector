@@ -1,0 +1,27 @@
+[
+{
+    "firstList":
+    [
+        {  "xpath": "//*[contains(@text,'绝地求生')]" }
+    ],
+    "selectList":
+    [
+        {  "xpath": "//*[@clickable='true']" },
+        {  "xpath": "//*[@clickable='true']//*[contains(name(),'Text')]" },
+        {  "xpath": "//*[@clickable='true']//*[contains(name(),'Button')]" },
+        {  "xpath": "//*[@clickable='true']//*[contains(name(),'Image')]" }
+    ],
+    "lastList":
+    [
+        {  "xpath": "//*[../*[@selected='true']]" },
+        {  "xpath": "//*[../../*/*[@selected='true']]" },
+        {  "xpath": "//*[../../*/*[@selected='true'] and contains(@resource-id,'tab_')]" },
+        {  "xpath": "//*[contains(@resource-id,'HorizontalScrollView')]" }
+    ],
+    "blackList":
+    [
+        {  "xpath": "//*[contains(@resource-id,'wrapper_in_custom_title_bar')]//*[contains(@resource-id,'right_button')]" },
+        {  "xpath": "//*[contains(@resource-id,'share')]" }
+    ]
+}
+]
