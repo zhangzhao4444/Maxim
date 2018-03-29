@@ -1,65 +1,36 @@
 # Maxim 
 
-> A Kotlin implementation of Monkey TEST(Non-Stub) for Android that runs on Simulator/Android devices. 
+> An efficient Android Monkey Tester, available for emulators and real devices
+> 基于遍历规则的高性能Android Monkey，适用于真机/模拟器的APP UI压力测试
 
 https://testerhome.com/topics/11719
 
-## 1. Requirements
-
-- Android 5/6/7/8
-  - Android5 does not support dfs mode
-
-## 2. Setup
+# 环境预备
+* 支持 Android 5，6，7，8，真机及模拟器; Android 5不支持 dfs mode
+* 将 framework.jar , monkey.jar push 到手机上某个目录中，建议`/sdcard`
 ```
 adb push framework.jar /sdcard
 adb push monkey.jar /sdcard
 ```
-Optionally
-```
-adb push ape.strings /sdcard
-adb push awl.strings /sdcard
-```
-## 3. Usage 
 
-Maxim is started from adb shell 
-```
-adb shell CLASSPATH=/sdcard/monkey.jar:/sdcard/framework.jar exec app_process /system/bin tv.panda.test.monkey.Monkey -p com.panda.videoliveplatform --uiautomatordfs 5000
-```
+# 图形化界面
+下载 [AppetizerIO](https://appetizer.io/cn/)：`APP测试->UI压力测试`，支持多种模式，黑白名单，所有配置文件（自动json语法查错），测试开始前自动push配置文件
 
-### 3.1 Args
+![](docs/appetizer1.png)
 
-[dfs mode]   --uiautomatordfs    monkey use DFS algorithm .  About 5 action per second.
+|  测试过程log实时更新  | 一键错误log上报作者 |
+|:-----------------:| :---------------:
+|  ![](docs/appetizer2.png) |![](docs/appetizer3.png)|
 
-[mix mode]  --uiautomatormix   monkey use AccessibilityService resolve tree node and random choose.  About 10-20 action per second.
-
-```
---pct-uiautomatormix   uiautomator action ratio in mix mode
-
---running-minutes  n  monkey total run time
-
---act-whitelist-file /sdcard/awl.strings 
---act-blacklist-file 
-```
-`max.xpath.actions`  this file is special event configure 
-
-other args are same to Android Monkey
-
-<hr>
-
-# 环境预备
-支持 android 5，6，7，8
-注 android 5不支持 dfs mode
-将 framework.jar , monkey.jar   push 到手机上某个目录中，比如/sdcard
-
-# 执行测试
+# 命令行模式
 cmd 命令 ：
 `adb shell CLASSPATH=/sdcard/monkey.jar:/sdcard/framework.jar exec app_process /system/bin tv.panda.test.monkey.Monkey -p com.panda.videoliveplatform --uiautomatormix --running-minutes 60 -v -v`
 
 * `tv.panda.test.monkey.Monkey`： monkey入口类，不要修改
 * `com.panda.videoliveplatform`： 被测app包名，需要修改
-* `--uiautomatormix`： 测试策略
+* `--uiautomatormix`： 遍历策略
 
-# 策略支持：
+# 策略
 
 1. 模式 DFS
   --uiautomatordfs
@@ -220,7 +191,7 @@ max.screenShotAndSavePageSource = true   开启截图
 
 ## 20180322 增加TROY模式
 
-adb shell CLASSPATH=/sdcard/monkey.jar:/sdcard/framework.jar exec app_process /system/bin tv.panda.test.monkey.Monkey -p com.panda.videoliveplatform --uiautomatortroy --running-minutes 15 -v -v 
+`adb shell CLASSPATH=/sdcard/monkey.jar:/sdcard/framework.jar exec app_process /system/bin tv.panda.test.monkey.Monkey -p com.panda.videoliveplatform --uiautomatortroy --running-minutes 15 -v -v `
 
 配置max.xpath.selector 控件优先级
 ```js
@@ -256,4 +227,40 @@ adb shell CLASSPATH=/sdcard/monkey.jar:/sdcard/framework.jar exec app_process /s
 
 max.xpath.selector 需要push 到/sdcard/
 
+<hr>
 
+## 1. Requirements
+
+- Android 5/6/7/8
+  - Android5 does not support dfs mode
+
+## 2. Installation
+```
+adb push framework.jar /sdcard
+adb push monkey.jar /sdcard
+```
+Optionally, push configuration file(s)
+```
+adb push ape.strings /sdcard
+adb push awl.strings /sdcard
+```
+## 3. Usage 
+
+Maxim is started from adb shell 
+```
+adb shell CLASSPATH=/sdcard/monkey.jar:/sdcard/framework.jar exec app_process /system/bin tv.panda.test.monkey.Monkey -p com.panda.videoliveplatform --uiautomatordfs 5000
+```
+
+### Modes
+* dfs mode:  `--uiautomatordfs`  traverse view tree with Depth-First Search. About 5 actions per second.
+* mix mode:  `--uiautomatormix`  use AccessibilityService to resolve view tree and mix vanilla monkey events with view clicks.  About 10-20 actions per second.
+  * `--pct-uiautomatormix`   ratio (percentage number)
+
+### Timing control
+* `--running-minutes  n`  run for n minutes
+
+### Optional configuration (rules)
+
+* `--act-whitelist-file` e.g., /sdcard/awl.strings white list for activities
+* `--act-blacklist-file`
+* `max.xpath.actions`  to specify special event, see example
