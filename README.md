@@ -226,8 +226,26 @@ max.screenShotAndSavePageSource = true   开启截图
 控件选择策略会按 1first 2select 3last 并屏蔽black来执行遍历
 
 max.xpath.selector 需要push 到/sdcard/
+ 
+
+  
+ ## 20180725 增加崩溃回溯截图  
+ 
+ 运行时shell增加 --imagepolling 参数 ， 开启崩溃回溯截图、关闭原截图逻辑
+当崩溃发生时 进行截图保存，实现可回溯崩溃场景，默认会在 /sdcard/crash_$timestamp/图
+
+配置`max.config`
+```
+max.screenShotAndSavePageSource = true   开启截图
+max.flushImagesThreshold  =xx  回溯区间大小xx张
+```
+ 
+截图的生效条件: `throttle > 200  &&  max.screenShotAndSavePageSource = true &&  --imagepolling`
+
 
 <hr>
+
+
 
 ## 1. Requirements
 
@@ -243,6 +261,7 @@ Optionally, push configuration file(s)
 ```
 adb push ape.strings /sdcard
 adb push awl.strings /sdcard
+
 ```
 ## 3. Usage 
 
