@@ -179,10 +179,12 @@ Action 支持
 ## 20180308 截图及dump xml
 配置`max.config`
 ```
-max.screenShotAndSavePageSource = true   开启截图
+max.takeScreenShot   开启截图
+max.savePageSource  保存xml 
+
 ```
  
-截图的生效条件: `throttle > 200  &&  max.screenShotAndSavePageSource = true`
+截图的生效条件: `throttle > 200  &&  max.takeScreenShot = true`
 
 案例：
 `adb shell CLASSPATH=/sdcard/monkey.jar:/sdcard/framework.jar exec app_process /system/bin tv.panda.test.monkey.Monkey -p com.panda.videoliveplatform --uiautomatormix --running-minutes 6 -v -v --throttle 400 --output-directory /sdcard/max1/`
@@ -227,20 +229,30 @@ max.screenShotAndSavePageSource = true   开启截图
 
 max.xpath.selector 需要push 到/sdcard/
  
+##20180517 增加随机测试多个app  
 
+adb shell CLASSPATH=/sdcard/monkey.jar:/sdcard/framework.jar exec app_process /system/bin tv.panda.test.monkey.Monkey --uiautomatormix --running-minutes 150 -v -v --system  /sdcard/apps.strings  
+
+apps.strings格式如下：  
+com.panda.videoliveplatform  
+com.google.android.calculator  
+com.android.chrome  
+
+其中每个app随机跑5-15分钟  
   
- ## 20180725 增加崩溃回溯截图  
+    
+ ## 20180725 增加崩溃回溯截图    
  
- 运行时shell增加 --imagepolling 参数 ， 开启崩溃回溯截图、关闭原截图逻辑
-当崩溃发生时 进行截图保存，实现可回溯崩溃场景，默认会在 /sdcard/crash_$timestamp/图
+ 运行时shell增加 --imagepolling 参数 ， 开启崩溃回溯截图、关闭原截图逻辑  
+当崩溃发生时 进行截图保存，实现可回溯崩溃场景，默认会在 /sdcard/crash_$timestamp/图  
 
-配置`max.config`
+配置`max.config`  
 ```
-max.screenShotAndSavePageSource = true   开启截图
-max.flushImagesThreshold  =xx  回溯区间大小xx张
+max.takeScreenShot   开启截图  
+max.flushImagesThreshold  =xx  回溯区间大小xx张  
 ```
  
-截图的生效条件: `throttle > 200  &&  max.screenShotAndSavePageSource = true &&  --imagepolling`
+截图的生效条件: `throttle > 200  &&  max.takeScreenShot = true &&  --imagepolling`  
 
 
 <hr>
