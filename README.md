@@ -248,8 +248,8 @@ com.android.chrome
 
 配置`max.config`  
 ```
-max.takeScreenShot   开启截图  
-max.flushImagesThreshold  =xx  回溯区间大小xx张  
+max.takeScreenShot =True  开启截图  
+max.flushImagesThreshold  =50 回溯区间大小xx张  
 ```
  
 截图的生效条件: `throttle > 200  &&  max.takeScreenShot = true &&  --imagepolling`  
