@@ -126,6 +126,17 @@ max.wakeupAfterNSecondsofsleep = 4000 唤醒后
              "args": "500,1000",
              "throttle": 1000
          }]
+},
+{
+     "prob": 1,
+     "actions": [
+     {
+             "xpath": "//*[@class='android.view.View']",
+             "index": 0,
+             "action": "KEYEVENT",
+             "keycode": 4,
+             "throttle": 1000
+         }]
 }
 ]
 ```
@@ -139,6 +150,7 @@ Action 支持
 2. INPUTTEXT 在匹配到的xpath控件中输入 text 指定字符，输入需要提前安装adbkeyboard
 3. TOUCH  点击指定坐标  args = (x,y)
 4. SWIPE  按执行路径滑动 args = (x1,y1,x2,y2,step)
+5. KEYEVENT 执行键盘事件 keycode   
 
 注 配置完成后请贴在 json.cn 检查格式，注意” : , 非中文
 将该文件 push 到 `/sdcard/max.xpath.actions`
