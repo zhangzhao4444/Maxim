@@ -267,7 +267,7 @@ max.flushImagesThreshold  =50 回溯区间大小xx张
 截图的生效条件: `throttle > 200  &&  max.takeScreenShot = true &&  --imagepolling`  
 
 
- ## 2019.08.16 update
+ ## 2019.08.16 支持更多事件
   mix 增加 back event 默认事件占比10%
   ```
     --pct-back 5 （设置占比5）
@@ -305,7 +305,7 @@ max.flushImagesThreshold  =50 回溯区间大小xx张
     https://github.com/zhangzhao4444/Maxim/blob/master/test.py
   ```
 
-  ## 2020.12.09 update
+  ## 2020.12.09 支持11
   ```
   兼容 Android11
 
@@ -318,8 +318,8 @@ max.flushImagesThreshold  =50 回溯区间大小xx张
 
 ## 1. Requirements
 
-- Android 5/6/7/8
-  - Android5 does not support dfs mode
+- Android 5/6/7/8/9/10/11
+
 
 ## 2. Installation
 ```
@@ -340,7 +340,6 @@ adb shell CLASSPATH=/sdcard/monkey.jar:/sdcard/framework.jar exec app_process /s
 ```
 
 ### Modes
-* dfs mode:  `--uiautomatordfs`  traverse view tree with Depth-First Search. About 5 actions per second.
 * mix mode:  `--uiautomatormix`  use AccessibilityService to resolve view tree and mix vanilla monkey events with view clicks.  About 10-20 actions per second.
   * `--pct-uiautomatormix`   ratio (percentage number)
 
