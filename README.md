@@ -6,7 +6,7 @@
 https://testerhome.com/topics/11719
 
 # 环境预备
-* 支持 Android 5，6，7，8，真机及模拟器; Android 5不支持 dfs mode
+* 支持 Android 5，6，7，8，9、10、11真机及模拟器;
 * 将 framework.jar , monkey.jar push 到手机上某个目录中，建议`/sdcard`
 ```
 adb push framework.jar /sdcard
@@ -32,7 +32,7 @@ cmd 命令 ：
 
 # 策略
 
-1. 模式 DFS
+1. 模式 DFS （已下线，遍历请用Fastbot）
   --uiautomatordfs
   增加深度遍历算法
 
@@ -266,6 +266,51 @@ max.flushImagesThreshold  =50 回溯区间大小xx张
  
 截图的生效条件: `throttle > 200  &&  max.takeScreenShot = true &&  --imagepolling`  
 
+
+ ## 2019.08.16 update
+  mix 增加 back event 默认事件占比10%
+  ```
+    --pct-back 5 （设置占比5）
+  ```
+  mix 增加 重启app event 默认事件占比0.3%
+  ```
+    --pct-reset 0 (关闭重启 事件)
+  ```
+  mix 增加 null intent event 默认事件占比0.2% 该事件探测app中exported组件，随机发null intent
+  ```
+   --pct-nullintent 0 (关闭null intent 事件)
+  ```
+
+  增加monkey api
+  ```
+    如何使用：
+    1）先启动monkey
+    adb shell CLASSPATH=/sdcard/monkey.jar:/sdcard/framework.jar exec app_process /system/bin tv.panda.test.monkey.Monkey -p com.panda.videoliveplatform --uiautomatorapi --running-minutes 100 -v -v -v -v
+    2）adb shell netcfg 查看ip
+    3) 结合Monkeyapi.py编写自己的test.py
+
+    目前提供了如下接口
+    1）dumptree
+    getXml()
+    2) 点击
+    click(500,550)
+    3）back
+    back()
+    4) 截屏base64
+    getScreenShotBase64()
+
+
+    demo
+    https://github.com/zhangzhao4444/Maxim/blob/master/MonkeyApi.py 无须修改
+    https://github.com/zhangzhao4444/Maxim/blob/master/test.py
+  ```
+
+  ## 2020.12.09 update
+  ```
+  兼容 Android11
+
+  下线dfs code
+  ```
 
 <hr>
 
