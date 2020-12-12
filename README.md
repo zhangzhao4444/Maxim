@@ -32,9 +32,9 @@ cmd 命令 ：
 
 # 策略
 
-1. 模式 DFS （已下线，遍历请用Fastbot）
+1. 模式 DFS （已下线，遍历请用Fastbot https://github.com/bytedance/Fastbot_Android）
   --uiautomatordfs
-  增加深度遍历算法
+  深度遍历算法
 
 2. 模式 Mix 
 --uiautomatormix
