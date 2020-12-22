@@ -32,18 +32,18 @@ cmd 命令 ：
 
 # 策略
 
-1. 模式 DFS （已下线，遍历请用Fastbot https://github.com/bytedance/Fastbot_Android）
+1. 模式 Mix (基于事件概率的压力测试)
+   --uiautomatormix
+   直接使用底层accessibiltyserver获取界面接口 解析各控件，随机选取一个控件执行touch操作。
+     同时与原monkey 其他操作按比例混合使用
+     默认accessibilityserver action占比50%，其余各action分剩余的50%
+     accessibilityserver action占比可配置 --pct-uiautomatormix n
+
+2. 模式 DFS （建议，遍历可用Fastbot https://github.com/bytedance/Fastbot_Android）
   --uiautomatordfs
   深度遍历算法
 
-2. 模式 Mix 
---uiautomatormix
-直接使用底层accessibiltyserver获取界面接口 解析各控件，随机选取一个控件执行touch操作。
-  同时与原monkey 其他操作按比例混合使用
-  默认accessibilityserver action占比50%，其余各action分剩余的50%
-  accessibilityserver action占比可配置 --pct-uiautomatormix n
-
-3. 模式Troy
+3. 模式Troy （建议，遍历可用Fastbot https://github.com/bytedance/Fastbot_Android）
   --uiautomatortroy
   控件选择策略按max.xpath.selector配置的高低优先级来进行深度遍历
 
@@ -311,6 +311,9 @@ max.flushImagesThreshold  =50 回溯区间大小xx张
 
   下线dfs code
   ```
+
+  ## 2020.12.21 恢复dfs mode
+
 
 <hr>
 
