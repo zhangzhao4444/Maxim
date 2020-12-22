@@ -41,13 +41,13 @@ cmd 命令 ：
      accessibilityserver action占比可配置 --pct-uiautomatormix n
    ```
 
-2. 模式 DFS （建议，遍历可用Fastbot https://github.com/bytedance/Fastbot_Android）
+2. 模式 DFS
   ```
   --uiautomatordfs
   深度遍历算法
   ```
 
-3. 模式Troy （建议，遍历可用Fastbot https://github.com/bytedance/Fastbot_Android）
+3. 模式Troy
   ```
   --uiautomatortroy
   控件选择策略按max.xpath.selector配置的高低优先级来进行深度遍历
