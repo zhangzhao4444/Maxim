@@ -318,8 +318,33 @@ max.flushImagesThreshold  =50 回溯区间大小xx张
   下线dfs code
   ```
 
-  ## 2020.12.21 恢复dfs mode
+  ## 2020.12.21
+  ```
+  恢复dfs mode
 
+  ```
+
+  ## 2021.05.30
+  ```
+  Android11 兼容 bugfix
+
+  mix 优化允许切出app，增加FUZZ切回app
+
+  mix 优化获取和设置输入法的反射
+  ```
+
+  ## 2021.06.12
+  ```
+  mix 增加 自定义启动activity
+
+  --intent-action  设置intent的action
+
+  --intent-data    设置intent的data ,Uri.parse(data)
+
+  --intent-extraKey  设置intent额外的bundle key
+
+  --intent-extraValue  设置intent额外的bundle key对应的value
+  ```
 
 <hr>
 
